@@ -1,0 +1,21 @@
+_schema-version: "3.2"
+ID: wfbatch12
+version: 0.0.2
+modules:
+- name: workflow-module
+  type: com.sap.application.content
+  path: workflow-module
+  requires:
+  - name: epwfbatch12
+    parameters:
+      content-target: true
+      service-key:
+        config:
+          deployUsageScenario: workflow
+        name: spa-workflow-service-key19
+resources:
+- name: epwfbatch12
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: process-automation-service
+    service-plan: standard
